@@ -7,7 +7,7 @@ const gitHubContext = createContext();
 export const GitHubProvider = ({children}) => {
 
     const GITHUB_URL = 'https://api.github.com'
-    const GITHUB_TOKEN = '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'
+    // const GITHUB_TOKEN = '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'
 
     const initialState = {
         users: [],
@@ -28,11 +28,7 @@ export const GitHubProvider = ({children}) => {
             type: 'SET_LOADING_TRUE',
             payload: true
         })
-        const response = await fetch(`${GITHUB_URL}/search/users?q=${text}`, {
-            headers: {
-                Authorization: `token ${GITHUB_TOKEN}`
-            }
-        })
+        const response = await fetch(`${GITHUB_URL}/search/users?q=${text}`)
         const {items} = await response.json()
 
         dispatch({
@@ -51,11 +47,7 @@ export const GitHubProvider = ({children}) => {
             type: 'SET_LOADING_TRUE',
             payload: true
         })
-        const response = await fetch(`${GITHUB_URL}/users/${login}`, {
-            headers: {
-                Authorization: `token ${GITHUB_TOKEN}`
-            }
-        })
+        const response = await fetch(`${GITHUB_URL}/users/${login}`)
         const data = await response.json()
         dispatch({
             type: 'GET_SINGLE_USER',
@@ -74,11 +66,7 @@ export const GitHubProvider = ({children}) => {
         })
 
 
-        const response = await fetch(`${GITHUB_URL}/users/${login}/repos?${params}`, {
-            headers: {
-                Authorization: `token ${GITHUB_TOKEN}`
-            }
-        })
+        const response = await fetch(`${GITHUB_URL}/users/${login}/repos?${params}`)
 
         const data = await response.json()
 

@@ -16,8 +16,8 @@ function RepoItem({repo}) {
 
   return (
     <motion.div className="repo-item" 
-    initial = {{opacity: 0, x: -200}}
-    whileInView = {{opacity: 1, x: 0}}
+    initial = {{opacity: 0, x: -200, borderRadius: 0}}
+    whileInView = {{opacity: 1, x: 0, borderRadius: 30}}
     viewport = {{once: true}}
     transition = {{type: 'spring', stiffness: 60}}
     
