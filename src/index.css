@@ -1,0 +1,531 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.App{
+  display: grid;
+  grid-template-areas: 
+    'nav nav nav',
+    'main main main',
+    'footer footer footer'
+  ;
+  grid-template-rows: 50px 1fr 40px ;
+  height: 100vh;
+}
+
+body{
+  background: var(--secondary-color);
+}
+/* UTILITY CLASSES */
+.link-edited{
+  text-decoration: none;
+}
+.lt-txt{
+  color: #fff;
+}
+.ghost-txt{
+  color: #ccc;
+}
+.lt-link{
+  color: #fff;
+  font-size: 0.8rem;
+}
+.grey-txt{
+  color: #333;
+}
+.big-2x{
+  font-size: 2rem;
+}
+.font-3x{
+  font-size: 3rem;
+}
+.mx-auto{
+  margin: 0 auto;
+}
+.mb-1{
+  margin-bottom: 1rem;
+}
+.mb-2{
+  margin-bottom: 2rem;
+}
+.mb-3{
+  margin-bottom: 3rem;
+}
+.mt-1{
+  margin-top: 1rem;
+}
+.mt-2{
+  margin-top: 2rem;
+}
+.mt-3{
+  margin-top: 3rem;
+}
+.mt-8{
+  margin-top: 8rem;
+}
+.mr-1{
+  margin-right: 0.3rem;
+}
+.mr-2{
+  margin-right: 2rem;
+}
+.mr-3{
+  margin-right: 3rem;
+}
+.container{
+  max-width: 1100px;
+}
+.user-go-back{
+  margin-top: 8rem;
+  display: inline-block;
+}
+.small-txt{
+  font-size: 0.8rem;
+}
+
+
+
+:root{
+  --primary-color: #333;
+  --secondary-color: #555
+}
+
+.spinner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+/* NAVBAR */
+
+.navbar{
+  background-color: var(--primary-color);
+}
+.navbar .container{
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+}
+.navbar .container ul{
+  display: flex;
+  list-style: none;
+}
+.nav-link{
+  color: #fff;
+  display: inline-block;
+  padding: 1rem;
+  text-decoration: none;
+}
+.nav-link:hover{
+  background: #fff;
+  color: #333;
+}
+.logo{
+  font-size: 2rem;
+  margin-top: 0.6rem;
+}
+
+.footer{
+ background: #333;
+ color: #fff;
+ text-align: center;
+}
+.footer p{
+  margin-top: 0.5rem;
+}
+
+.user-search{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  height: 100%;
+  align-items: center;
+  margin: 2rem;
+}
+.input-group{
+  position: relative;
+  margin-top: 1rem;
+}
+.search-btn{
+  position: absolute;
+  left: 21.5rem;
+  top: 0.3rem;
+  border-radius: 5px;
+  padding: 0.3rem 0.2rem;
+  border: none;
+  background: #333;
+  color: #fff;
+  cursor: pointer;
+}
+.clear-btn{
+  margin-top: 1rem;
+  border-radius: 5px;
+  padding: 0.3rem 1rem;
+  border: none;
+  background: #333;
+  color: #fff;
+  cursor: pointer;
+}
+
+#search-input{
+  width: 400px;
+  outline: none;
+  padding: 0.5rem 1rem;
+}
+#search-input:focus{
+  outline: none;
+}
+
+#search-input::placeholder{
+  font-family: cursive;
+}
+
+
+/* USER-LIST */
+.user-list{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+  margin: 1rem;
+}
+
+.user{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  background: var(--primary-color);
+  margin-top: 0.5rem;
+  padding:0.3rem 3rem 0.3rem 1rem;
+  color: #fff;
+  border-radius: 10px;
+}
+.profile-pic{
+  border-radius: 50%;
+}
+.user-name{
+  margin-left: 1rem;
+}
+
+
+/* USER */
+.user-page{
+  display: flex;
+  margin-top: 2rem;
+}
+
+.single-user-image{
+  position: relative;
+  margin-right: 2rem;
+  opacity: 0.9;
+}
+
+.image-name{
+  position: absolute;
+  bottom: -1rem;
+  left: 2rem;
+  font-size: 0.9rem;
+  background-color: rgb(69, 69, 235);
+  padding: 0.4rem 1rem;
+  border-radius: 16px;
+}
+.image-name p{
+  margin-bottom: 0.3rem;
+}
+.name-details{
+  position: relative;
+}
+
+.profile-name{
+  position: absolute;
+  bottom: 1rem;
+  left: 4rem;
+}
+.profile-avatar{
+  opacity: 0.4;
+  border-radius: 6px;
+}
+
+.person-header{
+  display: flex;
+}
+.hireable, .type{
+  margin-top: 0.3rem;
+  margin-left: 0.5rem;
+  padding: 0.2rem 0.6rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+.type{
+  background: rgb(111, 151, 71);
+}
+.hireable{
+  background: rgb(69, 69, 235);
+}
+.bio{
+  padding-right: 5rem;
+}
+
+.visit-git{
+  display: inline-block;
+  border: 1px solid #fff;
+  padding: 0.5rem 2rem;
+  border-radius: 10px;
+  opacity: 0.5
+}
+.visit-git:hover{
+  opacity: 1;
+}
+
+.user-stats{
+  display: flex;
+  margin-top: 1rem;
+}
+.stat-div{
+  margin-right: 2rem;
+  border: none;
+  padding: 0.5rem 2rem;
+  box-shadow: 10px 10px 10px var(--primary-color);
+}
+.stat-div p{
+  margin-top: 0.2rem;
+}
+
+.user-info{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+  box-shadow: 10px 10px 10px var(--primary-color);
+  padding: 1rem;
+}
+.follower-count{
+  display: flex;
+  /* margin-top: 0.5rem; */
+}
+.following{
+  display: flex;
+}
+.fa-users{
+  font-size: 2rem;
+  margin-right: 1rem;
+}
+.fa-user-friends{
+  font-size: 2rem;
+  margin-right: 0.8rem;
+}
+.fa-code-pen{
+  font-size: 2rem;
+}
+.public-repos{
+  display: flex;
+}
+.repos{
+  margin-left: 1rem;
+}
+.public-gists{
+  display: flex;
+}
+.gists{
+  margin-left: 1rem;
+}
+
+
+
+.badges{
+  display: flex;
+}
+.repo-list{
+  margin: 2rem 0;
+}
+.repo-item{
+  background: var(--primary-color);
+  margin-top: 1rem;
+  padding: 1rem;
+  opacity: 0.7;
+  width: 80%;
+}
+.repo-item:hover{
+  opacity: 1;
+}
+.watchers{
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 10px;
+  background: rgb(111, 151, 71);
+  margin-top: 0.5rem;
+  box-shadow: 5px 5px 17px green;
+}
+.star-gazers{
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 10px;
+  background: rgb(69, 69, 235);
+  margin-top: 0.5rem;
+  box-shadow: 5px 5px 17px blue;
+}
+.open-issues{
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 10px;
+  background: rgb(241, 41, 91);
+  margin-top: 0.5rem;
+  box-shadow: 5px 5px 17px pink;
+}
+.forks{
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 10px;
+  background: rgb(110, 110, 39);
+  margin-top: 0.5rem;
+  box-shadow: 5px 5px 17px yellow;
+}
+
+
+
+
+/* MEDIA QUERIES */
+@media (max-width: 1100px) {
+  .user-list{
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .about{
+    margin: 1rem;
+  }
+  .user-info{
+    width: 90%;
+  }
+}
+
+
+@media (max-width: 900px) {
+  .navbar .container {
+    justify-content: left;
+  }
+  .navbar ul{
+    margin-left: 2rem;
+  }
+ 
+  .about{
+    margin: 1rem;
+  }
+  .about p{
+    margin-top: 0.5rem;
+  }
+  .header-txt{
+    margin-right: 8rem;
+  }
+  #search-input{
+    margin-right: 8rem;
+  }
+  .clear-btn{
+    margin-right: 8rem;
+  }
+}
+@media (max-width: 800px) {
+  .navbar .container {
+    justify-content: left;
+  }
+  .navbar ul{
+    margin-left: 2rem;
+  }
+  .location{
+    display: none;
+  }
+
+  .about{
+    margin: 1rem;
+  }
+  .userpage{
+    font-size: 0.9rem;
+  }
+  .about .badges{
+    font-size: 0.8rem;
+  }
+  .user-list{
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0;
+  }
+  .header-txt{
+    margin-right: 4rem;
+  }
+  #search-input{
+    margin-right: 4rem;
+  }
+  .clear-btn{
+    margin-right: 4rem;
+  }
+}
+
+
+
+@media (max-width: 700px) {
+
+  .navbar .container {
+    justify-content: left;
+  }
+  .user-list{
+    grid-template-columns: repeat(1, 1fr);
+    margin-right: 30rem;
+  }
+  .header-txt{
+    margin-right: 30rem;
+    font-size: 2rem;
+  }
+  #search-input{
+    margin-right: 30rem;
+  }
+  .clear-btn{
+    margin-right: 30rem;
+  }
+  .user-info{
+    width: 80%;
+  }
+  .user-stats{
+    padding: 0.3rem;
+    font-size: 0.6rem;
+    margin-right: 3rem;
+  }
+}
+
+@media (max-width:500px) {
+  .navbar .container {
+    justify-content: left;
+  }
+  .type, .hireable{
+    font-size: 0.5rem;
+    border-radius: 1px;
+    text-align: center;
+    padding: 0.2rem 0.3rem;
+  }
+  .single-details{
+    position: relative;
+  }
+  .user-stats{
+    position: absolute;
+    right: 1rem;
+    font-size: 0.7rem;
+    top: 13rem;
+    /* margin-right: 10rem; */
+  }
+  .stat-div{
+    padding: 0.5rem 1rem;
+  }
+  .user-icons{
+    font-size: 1rem;
+  }
+  .user-info{
+    margin-top: 6rem;
+    margin-left: 1rem;
+    width: 70%;
+  }
+  .userpage{
+    margin-left: 1rem;
+  }
+}
