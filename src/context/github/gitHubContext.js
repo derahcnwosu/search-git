@@ -6,8 +6,8 @@ const gitHubContext = createContext();
 
 export const GitHubProvider = ({children}) => {
 
-    const GITHUB_URL = 'https://api.github.com'
-    const GITHUB_TOKEN = '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'
+    const GITHUB_URL = process.env.REACT_APP_GITHUB_URL
+    const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN
 
     const initialState = {
         users: [],
