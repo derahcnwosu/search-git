@@ -15,7 +15,7 @@ function UserList() {
           </div>
         )
     } else {
-        return <Spinner />
+        return (<div className = 'user-list'><Spinner /></div>)
     }
 }
 
