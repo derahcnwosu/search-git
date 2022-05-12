@@ -7,7 +7,7 @@ const gitHubContext = createContext();
 export const GitHubProvider = ({children}) => {
 
     const GITHUB_URL = 'https://api.github.com'
-    // const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN
+    const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN
 
     const initialState = {
         users: [],
@@ -28,7 +28,11 @@ export const GitHubProvider = ({children}) => {
             type: 'SET_LOADING_TRUE',
             payload: true
         })
-        const response = await fetch(`${GITHUB_URL}/search/users?q=${text}`)
+        const response = await fetch(`${GITHUB_URL}/search/users?q=${text}`, {
+            headers: {
+                Authorization: `token ${GITHUB_TOKEN}`
+            }
+        })
         const {items} = await response.json()
 
         dispatch({
